@@ -1,0 +1,64 @@
+$maincolor: rgb(114, 131, 156);
+
+.sidebar {
+    --bar-width: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $maincolor;
+    
+    &-open {
+        min-width: var(--bar-width);
+        padding: calc(var(--bar-width) / 8 );
+    }
+    &-closed {
+        min-width: calc(var(--bar-width) / 2.2);
+        padding: calc(calc(var(--bar-width) / 2.2) / 5 );
+    }
+    
+    .btn {
+        cursor: pointer;
+        list-style: none;
+        width: 100%;
+        padding-bottom: 100%;
+        background-color: white;
+        margin-bottom: calc(2 * calc(calc(var(--bar-width) / 2.2) / 5 ));
+        border-radius: 1rem;
+        background-repeat: no-repeat;
+        &:hover {
+            opacity: 80%;
+        }
+    }
+
+    .resize-btn {
+        --resize-btn-size: 40px;
+        font-weight: 700;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        user-select: none;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 25%;
+        color: lighten($maincolor, 30%);
+        background-color: darken($maincolor, 30%);
+        img {
+            width: 100%;
+        }
+        &-open{
+            font-size: 1.5rem;
+            width: var(--resize-btn-size);
+            height: var(--resize-btn-size);
+            left: calc((var(--resize-btn-size) * -1/2);
+        }
+        &-closed{
+            font-size: calc(1.5rem / 1.2);
+            width: calc(var(--resize-btn-size) / 1.2);
+            height: calc(var(--resize-btn-size) / 1.2);
+            left: calc(calc(var(--resize-btn-size) / 1.2) * -1/2);
+            transform: rotate(180deg);
+        }
+    }
+}
