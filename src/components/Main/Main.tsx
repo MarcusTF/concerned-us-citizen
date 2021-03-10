@@ -9,7 +9,7 @@ function Main({ selectedTab }: { selectedTab: string }) {
     return (
         <div className='main'>
             {SITECONTENT.SiteContent.map(item => {
-                return <Tab selectedTab={selectedTab} tabId={item.sharedId} key={item.sharedId} mainContent={item.mainContent} />
+            return <Tab selectedTab={selectedTab} tabId={item.sharedId} key={item.sharedId} mainContent={item.mainContent} />
             })}
         </div>
     )

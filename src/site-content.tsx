@@ -1,6 +1,7 @@
 import { Content } from './contentInterface'
 import BLMFIST from './assets/BLM1.png'
 import LGBTFLAG from './assets/LGBT.jpg'
+import arrowOver from './assets/shortcut-24px.svg'
 
 export module SITECONTENT {
     export const SiteContent: Content[] = [
@@ -18,6 +19,10 @@ export module SITECONTENT {
                         description: `On this site you will find resources where you can donate, sign petitions, find protests, vote, or otherwise support positve social change. I'm not here to reinvent the wheel, so some of the resources might be sites that link to other resources rather than direct links to resources.`,
                     },
                     {
+                        image: {
+                            url: arrowOver,
+                            placement: 'center'
+                        },
                         key: 2,
                         cardStyle: { backgroundColor: '' },
                         description: `Select a category on the the right to view related resources.`
@@ -75,11 +80,13 @@ export module SITECONTENT {
         },
         {
             sharedId: 'LGBT',
-            buttonContent: { key: 1, style: {
-                backgroundImage: `url(${LGBTFLAG})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'left'
-            } },
+            buttonContent: {
+                key: 1, style: {
+                    backgroundImage: `url(${LGBTFLAG})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'left'
+                }
+            },
             mainContent: {
                 key: 1, styling: {},
                 content: [

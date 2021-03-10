@@ -1,12 +1,12 @@
 import React from 'react'
 
-
-import { MainContent } from "../../../contentInterface";
+import { MainContent } from "../../../contentInterface"
 
 function Tab({ tabId, mainContent, selectedTab }: { tabId: string, mainContent: MainContent, selectedTab: any }) {
+
     if (tabId === selectedTab) {
         return (
-            <div className={`${tabId}-tab tab`} >
+            <div className={`${tabId}-tab tab`}>
                 {mainContent.content.map(item => {
                     let hasTitle: boolean = !!item.title && item.title !== ''
                     let hasButtonUrl: boolean = !!item.buttonUrl && item.buttonUrl !== ''

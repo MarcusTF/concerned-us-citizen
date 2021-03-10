@@ -1,6 +1,7 @@
 $maincolor: rgb(114, 131, 156);
 
 .sidebar {
+    transition: 200ms;
     --bar-width: 80px;
     position: relative;
     display: flex;
@@ -12,7 +13,7 @@ $maincolor: rgb(114, 131, 156);
         padding: calc(var(--bar-width) / 8 );
     }
     &-closed {
-        min-width: calc(var(--bar-width) / 2.2);
+        min-width: 0;
         padding: calc(calc(var(--bar-width) / 2.2) / 5 );
     }
     
@@ -32,32 +33,34 @@ $maincolor: rgb(114, 131, 156);
 
     .resize-btn {
         --resize-btn-size: 40px;
+        transition: 200ms;
+        cursor: pointer;
         font-weight: 700;
         border: none;
         outline: none;
-        cursor: pointer;
         user-select: none;
         display: grid;
         place-items: center;
         border-radius: 50%;
         position: absolute;
-        bottom: 25%;
         color: lighten($maincolor, 30%);
         background-color: darken($maincolor, 30%);
         img {
             width: 100%;
         }
         &-open{
+            bottom: 25%;
             font-size: 1.5rem;
             width: var(--resize-btn-size);
             height: var(--resize-btn-size);
-            left: calc((var(--resize-btn-size) * -1/2);
+            left: calc((var(--resize-btn-size) * -1/2));
         }
         &-closed{
-            font-size: calc(1.5rem / 1.2);
-            width: calc(var(--resize-btn-size) / 1.2);
-            height: calc(var(--resize-btn-size) / 1.2);
-            left: calc(calc(var(--resize-btn-size) / 1.2) * -1/2);
+            font-size: calc(1.5rem / 1.5);
+            bottom: 30%;
+            width: calc(var(--resize-btn-size) / 1.5);
+            height: calc(var(--resize-btn-size) / 1.5);
+            left: calc(calc(var(--resize-btn-size) / 1.5) * -1/1.5);
             transform: rotate(180deg);
         }
     }
