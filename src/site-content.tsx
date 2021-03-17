@@ -1,124 +1,170 @@
 import { Content } from './contentInterface'
 import BLMFIST from './assets/BLM1.png'
 import LGBTFLAG from './assets/LGBT.jpg'
-import arrowOver from './assets/shortcut-24px.svg'
+import ARROWOVER from './assets/shortcut-24px.svg'
+import SITELOGOWBG from './assets/CUSCwwhite.png'
+import SITELOGO from './assets/CUSC500.png'
+
+// eventually i'd like for this content to be pulled from a server, but for now it's hard-coded.
 
 export module SITECONTENT {
-    export const SiteContent: Content[] = [
-        {
-            sharedId: 'Home',
-            buttonContent: { key: 1 },
-            mainContent: {
-                key: 1, styling: {},
-                content: [
-                    {
-                        // image: './',
-                        key: 1,
-                        cardStyle: { backgroundColor: '' },
-                        title: 'Welcome to Concered US Citizen',
-                        description: `On this site you will find resources where you can donate, sign petitions, find protests, vote, or otherwise support positve social change. I'm not here to reinvent the wheel, so some of the resources might be sites that link to other resources rather than direct links to resources.`,
-                    },
-                    {
-                        image: {
-                            url: arrowOver,
-                            placement: 'center'
-                        },
-                        key: 2,
-                        cardStyle: { backgroundColor: '' },
-                        description: `Select a category on the the right to view related resources.`
-                    }
-                ]
-            }
+  export const SiteContent: Content[] = [
+    {
+      sharedId: 'Home',
+      buttonContent: {
+        key: 1,
+        style: {
+          backgroundImage: `url(${SITELOGOWBG})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'contain',
         },
-        {
-            sharedId: 'BLM',
-            buttonContent: {
-                key: 1,
-                style: {
-                    backgroundImage: `url(${BLMFIST})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'contain',
-                    backgroundColor: 'black'
-                }
+      },
+      mainContent: {
+        key: 1,
+        styling: {},
+        content: [
+          {
+            key: 1,
+            image: {
+              url: String(SITELOGO),
+              placement: 'center',
+              size: 'contain',
             },
-            mainContent: {
-                key: 1, styling: {},
-                content: [
-                    {
-                        key: 1,
-                        image: {
-                            url: 'https://houseofkaizen.com/wp-content/uploads/2020/06/BLM.png',
-                            placement: 'top'
-                        },
-                        title: 'Black Lives Matter Carrd',
-                        description: 'A resource for tons of petitions, places to donate, and much more.',
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    },
-                    {
-                        key: 2,
-                        cardStyle: { backgroundColor: 'white' },
-                        title: 'This Is A Test',
-                        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio quidem. Cupiditate sed rerum doloremque mollitia eveniet, autem inventore fuga eligendi necessitatibus doloribus dolore quibusdam.",
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    },
-                    {
-                        key: 3,
-                        cardStyle: { backgroundColor: 'white' },
-                        title: 'This Is A Test',
-                        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio quidem. Cupiditate sed rerum doloremque mollitia eveniet, autem inventore fuga eligendi necessitatibus doloribus dolore quibusdam.",
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    },
-                    {
-                        key: 4,
-                        cardStyle: { backgroundColor: 'white' },
-                        title: 'This Is A Test',
-                        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio quidem. Cupiditate sed rerum doloremque mollitia eveniet, autem inventore fuga eligendi necessitatibus doloribus dolore quibusdam.",
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    }
-                ]
-            }
-        },
-        {
-            sharedId: 'LGBT',
-            buttonContent: {
-                key: 1, style: {
-                    backgroundImage: `url(${LGBTFLAG})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'left'
-                }
+            cardStyle: { backgroundColor: '' },
+            title: 'Welcome to Concerned US Citizen',
+            description: `On this site you will find resources where you can donate, sign petitions, find protests, vote, or otherwise support positve social change. I'm not here to reinvent the wheel, so some of the resources might be sites that link to other resources rather than direct links to resources.`,
+          },
+          {
+            key: 2,
+            image: {
+              url: ARROWOVER,
+              placement: 'center',
             },
-            mainContent: {
-                key: 1, styling: {},
-                content: [
-                    {
-                        key: 1,
-                        title: 'THIS IS A TEST',
-                        description: 'A resource for tons of petitions, places to donate, and much more.',
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    },
-                    {
-                        key: 2,
-                        cardStyle: { backgroundColor: 'white' },
-                        title: 'This Is A Test',
-                        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio quidem. Cupiditate sed rerum doloremque mollitia eveniet, autem inventore fuga eligendi necessitatibus doloribus dolore quibusdam.",
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    },
-                    {
-                        key: 3,
-                        cardStyle: { backgroundColor: 'white' },
-                        title: 'This Is A Test',
-                        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio quidem. Cupiditate sed rerum doloremque mollitia eveniet, autem inventore fuga eligendi necessitatibus doloribus dolore quibusdam.",
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    },
-                    {
-                        key: 4,
-                        cardStyle: { backgroundColor: 'white' },
-                        title: 'This Is A Test',
-                        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio quidem. Cupiditate sed rerum doloremque mollitia eveniet, autem inventore fuga eligendi necessitatibus doloribus dolore quibusdam.",
-                        buttonUrl: 'https://blacklivesmatters.carrd.co/'
-                    }
-                ]
-            }
+            cardStyle: { backgroundColor: '' },
+            description: `Select a category on the the right to view related resources.`,
+          },
+        ],
+      },
+    },
+    {
+      sharedId: 'BLM',
+      buttonContent: {
+        key: 1,
+        style: {
+          backgroundImage: `url(${BLMFIST})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'contain',
+          backgroundColor: 'black',
         },
-    ]
+      },
+      mainContent: {
+        key: 1,
+        styling: {},
+        content: [
+          {
+            key: 0,
+            image: {
+              url:
+                'https://houseofkaizen.com/wp-content/uploads/2020/06/BLM.png',
+              placement: 'top',
+              size: 'contain',
+            },
+            title: 'Black Lives Matter',
+            description: 'Fight for racial equity and justice.',
+          },
+          {
+            key: 1,
+            cardStyle: {
+              backgroundColor: '#EDEDED',
+            },
+            btnStyling: {
+              fontFamily: 'Abril Fatface, serif',
+              fontSize: '1.5rem',
+            },
+            title: 'Black Lives Matter Carrd',
+            description:
+              'A resource for tons of petitions, places to donate, and much more.',
+            buttonUrl: 'https://blacklivesmatters.carrd.co/',
+          },
+          {
+            key: 2,
+            image: {
+              url: 'https://ritholtz.com/wp-content/uploads/2020/05/map.jpg',
+              placement: 'right',
+            },
+            title: 'Mapping Police Violence',
+            description:
+              'Mapping Police Violence displays relevant information about police brutality in an accessible and easy to read manner.',
+            buttonUrl: 'https://mappingpoliceviolence.org/',
+          },
+          {
+            key: 3,
+            image: {
+              url:
+                'https://www.blackgirlscode.com/uploads/1/5/8/2/15823664/published/1320916358.png?1485809428',
+              placement: 'center',
+              size: 'contain',
+            },
+            cardStyle: {
+              backgroundColor: '#202020',
+              color: 'white',
+            },
+            btnStyling: {
+              border: 'none',
+              backgroundColor: '#F64279',
+              fontWeight: 'lighter',
+              color: 'white',
+              borderRadius: '3px',
+            },
+            title: 'Black Girls CODE',
+            description:
+              'Black Girls CODE is devoted to showing the world that black girls can code, and do so much more. Click the link to learn more and donate to their cause.',
+            buttonUrl: 'https://www.blackgirlscode.com',
+          },
+        ],
+      },
+    },
+    {
+      sharedId: 'LGBT',
+      buttonContent: {
+        key: 1,
+        style: {
+          backgroundImage: `url(${LGBTFLAG})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'left',
+        },
+      },
+      mainContent: {
+        key: 1,
+        styling: {},
+        content: [
+          {
+            key: 0,
+            image: {
+              url: LGBTFLAG,
+              placement: 'left',
+              size: 'cover',
+            },
+            title: 'LGBTQ+',
+            description: 'Support the LGBTQ+ community.',
+          },
+
+          {
+            key: 1,
+            cardStyle: {
+              backgroundColor: '#EDEDED',
+            },
+            btnStyling: {
+              fontFamily: 'Abril Fatface, serif',
+              fontSize: '1.5rem',
+            },
+            title: 'LGBTQ+ Carrd',
+            description:
+              'A resource for tons of petitions, places to donate, and much more.',
+            buttonUrl: 'https://helpinglgbt.carrd.co/',
+          },
+        ],
+      },
+    },
+  ]
 }

@@ -1,65 +1,67 @@
 $maincolor: rgb(114, 131, 156);
 
 .main {
-    display: flex;
-    background-color: lighten($maincolor, 15%);
-    max-width: 100%;
-    flex: auto;
-    flex-direction: column;
-    overflow-y: hidden;
-    padding: 1rem;
-    justify-content: flex-start;
-    &::-webkit-scrollbar {
-        width: 0.5rem;
-        &-thumb {
-            background-color: rgba(0, 0, 0, 0.39);
-            background-blend-mode: multiply;
-            border-radius: 1rem;
-            margin-right: 5px;
-        }
+  display: flex;
+  background-color: lighten($maincolor, 15%);
+  max-width: 100%;
+  flex: auto;
+  flex-direction: column;
+  overflow-y: overlay;
+  padding: 1rem;
+  justify-content: flex-start;
+  font-family: Co Headline, Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  p {
+    font-family: Co Text, Arial, Helvetica, sans-serif;
+  }
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    &-thumb {
+      background-color: rgba(0, 0, 0, 0.39);
+      background-blend-mode: multiply;
+      border-radius: 1rem;
+      margin-right: 5px;
     }
-    &:hover {
-        overflow-y: overlay;
-    }
+  }
 }
 .tab {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    flex: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: auto;
 }
 
 .cards {
-    flex: auto;
-    margin: 1rem;
-    padding: 2rem 1rem;
-    background-color: white;
-    width: 250px;
-    min-width: 200px;
-    max-width: 400px;
-    border-radius: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    min-height: 12rem;
-    &-button {
-        text-decoration: none;
-        border: 3px solid black;
-        padding: 0.5rem;
-        color: black;
-    }
-    p {
-        margin-top: 1rem;
-        width: 90%;
-    }
-    &-img {
-        width: 100%;
-        margin: 1rem 0rem;
-        padding-top: 100%;
-        background-size: cover;
-        background-position: center;
-    }
+  flex: auto;
+  margin: 1rem;
+  padding: 2rem 1rem;
+  background-color: white;
+  width: 250px;
+  min-width: 200px;
+  max-width: 400px;
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 12rem;
+  &-button {
+    text-decoration: none;
+    border: 3px solid black;
+    padding: 0.5rem;
+    color: black;
+  }
+  p {
+    margin-top: 1rem;
+    width: 90%;
+  }
+  &-img {
+    width: 100%;
+    margin: 1rem 0rem;
+    padding-top: 100%;
+    background-size: cover;
+    background-position: center;
+  }
 }

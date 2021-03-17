@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
-import './App.scss';
+import './App.scss'
 
-import SideBar from "./components/SideBar/SideBar";
-import Main from "./components/Main/Main"
+import SideBar from './components/SideBar/SideBar'
+import Main from './components/Main/Main'
 
 function App() {
-
+  // this stores the state for the current selected tab. it defaults to the "home" tab.
   const [selectedTab, setSelectedTab] = useState('Home')
 
+  // This sets the active tab based on the event.target.id of the clicked button.
   const setActive = (e: any) => {
     setSelectedTab(e.target.id)
   }
 
-  // selectedTab !== 'BLM' && setTab('BLM')
+  // the selected tab state is passed to the main component for changing the view, the
+  // setactive function is passed to the sidebar so that it can control wich tab is active.
 
   return (
     <div className="App">
       <Main selectedTab={selectedTab} />
       <SideBar setActive={setActive} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
