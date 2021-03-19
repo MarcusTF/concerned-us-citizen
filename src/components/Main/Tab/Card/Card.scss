@@ -1,0 +1,33 @@
+.cards {
+  flex: 1 1 250px;
+  margin: 1rem;
+  padding: 2rem 1rem;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 12rem;
+  text-decoration: none;
+  color: black;
+  &-button {
+    text-decoration: none;
+    border: 3px solid black;
+    padding: 0.5rem;
+    color: black;
+  }
+  p {
+    margin-top: 1rem;
+    width: 90%;
+  }
+  &-img {
+    width: 100%;
+    margin: 1rem 0rem;
+    padding-top: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}

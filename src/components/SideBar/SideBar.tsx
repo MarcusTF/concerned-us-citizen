@@ -1,28 +1,48 @@
 import React, { useEffect, useState, MouseEventHandler } from 'react'
+import { useSpring, animated } from 'react-spring'
 import { SITECONTENT } from '../../site-content'
 import './SideBar.scss'
 
 import chevron from '../../assets/chevron_right-white-18dp.svg'
 
 const SideBar = ({ setActive }: { setActive: MouseEventHandler }) => {
+  const [props, set] = useSpring(() => ({
+    config: { mass: 3 },
+    minWidth: '0px',
+    padding: '7.27px',
+  }))
+
   const [sizeState, setSizeState] = useState('open') // manages the open/closed state of the sidebar
 
   // This renders the sidebar as closed if the window width is less than 700px
   useEffect(() => {
-    window.innerWidth < 700 ? setSizeState('closed') : setSizeState('open')
-  }, [])
+    if (window.innerWidth < 700) {
+      setSizeState('closed')
+      set({ minWidth: '0px', padding: '7.27px' })
+    } else {
+      setSizeState('open')
+      set({ minWidth: '80px', padding: '10px' })
+    }
+  }, [set])
 
   // this toggles opening and closing the sidebar
-  const toggleSideBar: MouseEventHandler = (e: any) =>
-    sizeState === 'open' ? setSizeState('closed') : setSizeState('open')
+  const toggleSideBar: MouseEventHandler = (e: any) => {
+    if (sizeState === 'open') {
+      setSizeState('closed')
+      set({ minWidth: '0px', padding: '7.27px' })
+    } else {
+      setSizeState('open')
+      set({ minWidth: '80px', padding: '10px' })
+    }
+  }
 
   return (
-    <nav className={`sidebar sidebar-${sizeState}`}>
+    <animated.nav className={`sidebar`} style={props}>
       <button
         className={`resize-btn resize-btn-${sizeState}`}
         onClick={toggleSideBar}
       >
-        <img src={chevron} />
+        <img src={chevron} alt="" />
       </button>
       <ul>
         {/* Map SiteContent to sidebar buttons. */}
@@ -38,7 +58,7 @@ const SideBar = ({ setActive }: { setActive: MouseEventHandler }) => {
           )
         })}
       </ul>
-    </nav>
+    </animated.nav>
   )
 }
 

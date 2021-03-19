@@ -1,22 +1,13 @@
 $maincolor: rgb(114, 131, 156);
 
 .sidebar {
-  transition: 200ms;
   --bar-width: 80px;
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: $maincolor;
 
-  &-open {
-    min-width: var(--bar-width);
-    padding: calc(var(--bar-width) / 8);
-  }
-  &-closed {
-    min-width: 0;
-    padding: calc(calc(var(--bar-width) / 2.2) / 5);
-  }
-
+  z-index: 999;
   .btn {
     cursor: pointer;
     list-style: none;

@@ -4,11 +4,12 @@ import { SITECONTENT } from '../../site-content' // Importing the content from s
 
 import Tab from './Tab/Tab'
 
-/** The site content is mapped to the Tab component to create each view or tab of the app.
- *  The state for showing and hiding these is in the App.tsx component because it must interact
- *  with the sidebar buttons to select the appropriate tab. The logic for showing/hiding
- *  is inside the tab component.
- */
+/**
+ * The site content is mapped to the Tab component to create each view or tab of the app.
+ * The state for showing and hiding these is in the App.tsx component because it must interact
+ * with the sidebar buttons to select the appropriate tab. The logic for showing/hiding
+ * is inside the tab component.
+ **/
 function Main({ selectedTab }: { selectedTab: string }) {
   return (
     <div className="main">

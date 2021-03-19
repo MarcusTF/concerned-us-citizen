@@ -1,10 +1,13 @@
 import { Content } from './contentInterface'
-import BLMFIST from './assets/BLM1.png'
+import BLM from './assets/BLM1.webp'
+import BLMFIST from './assets/BLMFIST.webp'
 import LGBTFLAG from './assets/LGBT.jpg'
+import LGBTFLAGWP from './assets/LGBT.webp'
 import ARROWOVER from './assets/shortcut-24px.svg'
 import SITELOGOWBG from './assets/CUSCwwhite.png'
 import SITELOGO from './assets/CUSC500.png'
-
+import EQFL from './assets/EQFL_STACK.png'
+import HRC from './assets/HRC.svg'
 // eventually i'd like for this content to be pulled from a server, but for now it's hard-coded.
 
 export module SITECONTENT {
@@ -51,7 +54,7 @@ export module SITECONTENT {
       buttonContent: {
         key: 1,
         style: {
-          backgroundImage: `url(${BLMFIST})`,
+          backgroundImage: `url(${BLM})`,
           backgroundPosition: 'center',
           backgroundSize: 'contain',
           backgroundColor: 'black',
@@ -64,8 +67,7 @@ export module SITECONTENT {
           {
             key: 0,
             image: {
-              url:
-                'https://houseofkaizen.com/wp-content/uploads/2020/06/BLM.png',
+              url: BLMFIST,
               placement: 'top',
               size: 'contain',
             },
@@ -129,7 +131,7 @@ export module SITECONTENT {
       buttonContent: {
         key: 1,
         style: {
-          backgroundImage: `url(${LGBTFLAG})`,
+          backgroundImage: `url(${LGBTFLAGWP})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left',
         },
@@ -148,7 +150,6 @@ export module SITECONTENT {
             title: 'LGBTQ+',
             description: 'Support the LGBTQ+ community.',
           },
-
           {
             key: 1,
             cardStyle: {
@@ -162,6 +163,47 @@ export module SITECONTENT {
             description:
               'A resource for tons of petitions, places to donate, and much more.',
             buttonUrl: 'https://helpinglgbt.carrd.co/',
+          },
+          {
+            key: 2,
+            image: {
+              url: EQFL,
+              placement: 'left',
+              size: 'cover',
+            },
+            btnStyling: {
+              backgroundColor: '#88C540',
+              color: 'white',
+              border: 'none',
+              padding: '.9rem',
+              textTransform: 'uppercase',
+            },
+            title: 'Equality Florida',
+            description:
+              "Equality Florida is the largest civil rights organization dedicated to securing full equality for Florida's lesbian, gay, bisexual, transgender and queer (LGBTQ) community.",
+            buttonUrl: 'https://www.eqfl.org/',
+          },
+          {
+            key: 3,
+            image: {
+              url: HRC,
+              placement: 'center',
+              size: 'contain',
+            },
+            cardStyle: {
+              backgroundColor: '#000066',
+              color: 'white',
+            },
+            btnStyling: {
+              backgroundColor: '#ffdf1b',
+              color: 'black',
+              border: 'none',
+              textTransform: 'uppercase',
+            },
+            title: 'Human Rights Campaign',
+            description:
+              'The Human Rights Campaign envisions a world where every member of the LGBTQ family has the freedom to live their truth without fear, and with equality under the law.',
+            buttonUrl: 'https://www.hrc.org/',
           },
         ],
       },

@@ -14,7 +14,7 @@ function App() {
   }
 
   // the selected tab state is passed to the main component for changing the view, the
-  // setactive function is passed to the sidebar so that it can control wich tab is active.
+  // setActive function is passed to the sidebar so that it can control which tab is active.
 
   return (
     <div className="App">

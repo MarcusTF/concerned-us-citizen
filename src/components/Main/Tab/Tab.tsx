@@ -1,7 +1,9 @@
 import React from 'react'
+import { useSpring, animated } from 'react-spring'
 import { MainContent } from '../../../contentInterface'
+import './Tab.scss'
 
-import Card from './Card'
+import Card from './Card/Card'
 
 // The tab component receives the sharedId mapped to tabId. This same id is passed to the appropriate button in the sidebar component.
 // It also receives the the mainContent for the tab and the selectedTab state from the top level App component.
@@ -14,10 +16,18 @@ function Tab({
   mainContent: MainContent
   selectedTab: any
 }) {
+  // this is just a simple animation using react-spring to give things a little life.
+  const [props, set] = useSpring(() => ({
+    config: { mass: 3, friction: 35, tension: 270, precision: 0.001 },
+    opacity: 0,
+    transform: 'translateX(500px)',
+  }))
+
   // tab is rendered conditionally based on the selectedTab state.
   if (tabId === selectedTab) {
+    set({ opacity: 1, transform: 'translateX(0px)' }) // This sets the desired final state for the react-spring animation
     return (
-      <div className={`${tabId}-tab tab`}>
+      <animated.div style={props} className={`${tabId}-tab tab`}>
         {/* the actual meat of the app, 'SITECONTENT.siteContent.mainContent.content', is mapped to Card components. */}
         {mainContent.content.map(item => (
           <Card
@@ -32,9 +42,10 @@ function Tab({
             buttonUrl={item.buttonUrl}
           />
         ))}
-      </div>
+      </animated.div>
     )
   } else {
+    set({ opacity: 0, transform: 'translateX(500px)' })
     return null
   }
 }
