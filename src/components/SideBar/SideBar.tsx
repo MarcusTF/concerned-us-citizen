@@ -5,7 +5,7 @@ import './SideBar.scss'
 
 import chevron from '../../assets/chevron_right-white-18dp.svg'
 
-const SideBar = ({ setActive }: { setActive: MouseEventHandler }) => {
+const SideBar = ({ setActive }: { setActive: any }) => {
   const [props, set] = useSpring(() => ({
     config: { mass: 3 },
     minWidth: '0px',
@@ -54,6 +54,8 @@ const SideBar = ({ setActive }: { setActive: MouseEventHandler }) => {
               onClick={setActive}
               className={`${item.sharedId}-btn btn`}
               style={item.buttonContent.style}
+              tabIndex={0}
+              onKeyDown={e => e.code === 'Enter' && setActive(e)}
             />
           )
         })}

@@ -45,7 +45,7 @@ function Tab({
       </animated.div>
     )
   } else {
-    set({ opacity: 0, transform: 'translateX(500px)' })
+    set({ opacity: 0, transform: 'translateX(100px)' })
     return null
   }
 }
