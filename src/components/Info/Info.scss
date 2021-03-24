@@ -1,12 +1,10 @@
 @import '../../variables';
 $infobtnscolor: saturate(darken($maincolor, 40%), 10);
 .info {
-  align-self: center;
   display: flex;
   justify-content: center;
-  outline: none;
   position: relative;
-  width: fit-content;
+  outline: none;
   svg {
     position: relative;
     width: 30px;
