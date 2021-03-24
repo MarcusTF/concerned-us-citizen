@@ -4,10 +4,12 @@ import { SITECONTENT } from '../../site-content'
 import './SideBar.scss'
 
 import chevron from '../../assets/chevron_right-white-18dp.svg'
+import Info from '../Info/Info'
 
 const SideBar = ({ setActive }: { setActive: any }) => {
   const [props, set] = useSpring(() => ({
     config: { mass: 3 },
+    width: '0',
     minWidth: '0px',
     padding: '7.27px',
   }))
@@ -18,7 +20,7 @@ const SideBar = ({ setActive }: { setActive: any }) => {
   useEffect(() => {
     if (window.innerWidth < 700) {
       setSizeState('closed')
-      set({ minWidth: '0px', padding: '7.27px' })
+      set({ width: '0', minWidth: '0px', padding: '7.27px' })
     } else {
       setSizeState('open')
       set({ minWidth: '80px', padding: '10px' })
@@ -29,7 +31,7 @@ const SideBar = ({ setActive }: { setActive: any }) => {
   const toggleSideBar: MouseEventHandler = (e: any) => {
     if (sizeState === 'open') {
       setSizeState('closed')
-      set({ minWidth: '0px', padding: '7.27px' })
+      set({ width: '0', minWidth: '0px', padding: '7.27px' })
     } else {
       setSizeState('open')
       set({ minWidth: '80px', padding: '10px' })
@@ -52,14 +54,17 @@ const SideBar = ({ setActive }: { setActive: any }) => {
               key={item.sharedId}
               id={item.sharedId}
               onClick={setActive}
-              className={`${item.sharedId}-btn btn`}
+              className={`${item.sharedId}-btn btn tooltip`}
               style={item.buttonContent.style}
               tabIndex={0}
+              aria-label={item.buttonContent.tooltip}
               onKeyDown={e => e.code === 'Enter' && setActive(e)}
             />
           )
         })}
       </ul>
+      <hr />
+      <Info />
     </animated.nav>
   )
 }

@@ -7,8 +7,7 @@ $resizeBtnSize: 50px;
   display: flex;
   flex-direction: column;
   background-color: $maincolor;
-  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.301);
-
+  align-content: center;
   .btn {
     cursor: pointer;
     list-style: none;
@@ -18,11 +17,19 @@ $resizeBtnSize: 50px;
     margin-bottom: calc(2 * calc(calc(#{$barWidth} / 2.2) / 5));
     border-radius: 1rem;
     background-repeat: no-repeat;
+    transition: 200ms;
+    &:hover {
+      box-shadow: 0 0 5px black;
+      transform: scale(1.05);
+    }
+    &:focus-visible {
+      box-shadow: 0 0 5px black;
+      transform: scale(1.1);
+    }
+    &:focus {
+      outline: none;
+    }
   }
-  .btn:hover {
-    opacity: 75%;
-  }
-
   .resize-btn {
     transition: 350ms;
     cursor: pointer;
@@ -35,7 +42,6 @@ $resizeBtnSize: 50px;
     border-radius: 50%;
     position: absolute;
     color: lighten($maincolor, 30%);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.411);
     background-color: saturate(adjust-hue($maincolor, $hueAdjust), 50%);
     img {
       width: 100%;
@@ -45,7 +51,7 @@ $resizeBtnSize: 50px;
       background-color: saturate(adjust-hue($maincolor, $hueAdjust), 70%);
     }
     &:focus-visible {
-      box-shadow: 0 0 0 2px black, 0 0 0 3px white;
+      background-color: saturate(adjust-hue($maincolor, $hueAdjust), 70%);
     }
     &-open {
       transform-origin: center;
@@ -53,14 +59,20 @@ $resizeBtnSize: 50px;
       width: $resizeBtnSize;
       height: $resizeBtnSize;
       left: calc(calc(#{$resizeBtnSize} / 1.5) * -1 / 2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     }
     &-closed {
-      left: calc((#{$resizeBtnSize} * -1.2));
+      left: calc((#{$resizeBtnSize} * -1));
       transform-origin: center;
       bottom: calc(10% - calc(#{$resizeBtnSize} / 2));
-      width: $resizeBtnSize;
-      height: $resizeBtnSize;
+      width: calc(#{$resizeBtnSize} * 0.9);
+      height: calc(#{$resizeBtnSize} * 0.9);
       transform: rotate(-180deg);
     }
+  }
+  hr {
+    background-color: darken($maincolor, 10%);
+    border: 0.001px solid darken($maincolor, 10%);
+    margin-bottom: calc(2 * calc(calc(#{$barWidth} / 2.2) / 5));
   }
 }

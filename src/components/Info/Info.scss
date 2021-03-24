@@ -1,0 +1,26 @@
+@import '../../variables';
+$infobtnscolor: saturate(darken($maincolor, 40%), 10);
+.info {
+  display: flex;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  svg {
+    position: relative;
+    width: 30px;
+    transition: 200ms;
+    fill: $infobtnscolor;
+    &:hover {
+      fill: lighten($infobtnscolor, 10%);
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+  &:focus-visible {
+    background-color: $infobtnscolor;
+    // border: saturate($maincolor, 100%);
+    transform: scale(1.1);
+    svg {
+      fill: $maincolor;
+    }
+  }
+}

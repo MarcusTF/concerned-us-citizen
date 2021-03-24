@@ -29,6 +29,7 @@ export interface ButtonContent {
     backgroundColor?: string
   }
   styling?: CSSProperties
+  tooltip: string
 }
 
 export interface MainContent {

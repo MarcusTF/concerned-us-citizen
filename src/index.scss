@@ -1,6 +1,55 @@
+@import './variables';
+$infobtnscolor: saturate(darken($maincolor, 40%), 10);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  // border: 2px solid rgb(114, 169, 231)
+  // outline: 2px solid cyan;
+  // outline: 2px solid magenta;
+}
+
+.tooltip {
+  position: relative;
+  &::before,
+  &::after {
+    user-select: none;
+    visibility: hidden;
+    transform: translateX(-5px);
+    position: absolute;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+  }
+  &::after {
+    color: lighten($maincolor, 20%);
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(100% - 1px);
+    background-color: $infobtnscolor;
+    width: max-content;
+    content: attr(aria-label);
+    padding: 0.2em 0.6em 0.4em 0.6em;
+    border-radius: 5px;
+  }
+  &::before {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid $infobtnscolor;
+    border-top: 10px solid transparent;
+  }
+  &:hover,
+  &:focus-visible {
+    &::after,
+    &::before {
+      visibility: visible;
+      display: block;
+      opacity: 1;
+      transform: translateY(-50%) translateX(-15px);
+    }
+  }
 }

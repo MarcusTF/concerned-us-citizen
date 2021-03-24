@@ -21,6 +21,7 @@ export module SITECONTENT {
           backgroundPosition: 'center',
           backgroundSize: 'contain',
         },
+        tooltip: 'Home',
       },
       mainContent: {
         key: 1,
@@ -59,6 +60,7 @@ export module SITECONTENT {
           backgroundSize: 'contain',
           backgroundColor: 'black',
         },
+        tooltip: 'Black Lives Matter',
       },
       mainContent: {
         key: 1,
@@ -135,6 +137,7 @@ export module SITECONTENT {
           backgroundSize: 'cover',
           backgroundPosition: 'left',
         },
+        tooltip: 'LGBT+',
       },
       mainContent: {
         key: 1,
