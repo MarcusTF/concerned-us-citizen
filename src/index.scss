@@ -13,15 +13,17 @@ $infobtnscolor: saturate(darken($maincolor, 40%), 10);
   position: relative;
   &::before,
   &::after {
+    font-size: 0.85rem;
     user-select: none;
     visibility: hidden;
+    transform-origin: right;
     transform: translateX(-5px);
     position: absolute;
     opacity: 0;
     transition: 200ms ease-in-out;
   }
   &::after {
-    color: lighten($maincolor, 20%);
+    color: lighten($maincolor, 30%);
     top: 50%;
     transform: translateY(-50%);
     right: calc(100% - 1px);
@@ -49,6 +51,7 @@ $infobtnscolor: saturate(darken($maincolor, 40%), 10);
       visibility: visible;
       display: block;
       opacity: 1;
+      transform-origin: right;
       transform: translateY(-50%) translateX(-15px);
     }
   }
