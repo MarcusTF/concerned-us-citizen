@@ -2,7 +2,11 @@
   width: 100%;
   display: flex;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+<<<<<<< HEAD
   height: calc(var(--vh, 1vh) * 99.99);
+=======
+  height: calc(var(--vh, 1vh) * 100);
+>>>>>>> c33de9fa18971552c26a479430c1dfc682697c28
   overflow: hidden;
   font-family: Co Headline, Arial, Helvetica, sans-serif;
 }
