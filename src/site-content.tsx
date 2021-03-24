@@ -36,7 +36,7 @@ export module SITECONTENT {
             },
             cardStyle: { backgroundColor: '' },
             title: 'Welcome to Concerned US Citizen',
-            description: `On this site you will find resources where you can donate, sign petitions, find protests, vote, or otherwise support positve social change. I'm not here to reinvent the wheel, so some of the resources might be sites that link to other resources rather than direct links to resources.`,
+            description: `On this site you will find resources where you can donate, sign petitions, find protests, vote, or otherwise support positive social change. I'm not here to reinvent the wheel, so some of the resources might be sites that link to other resources rather than direct links to resources.`,
           },
           {
             key: 2,
