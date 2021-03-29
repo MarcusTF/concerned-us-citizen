@@ -31,6 +31,7 @@ $resizeBtnSize: 50px;
     }
   }
   .resize-btn {
+    z-index: 5;
     transition: 350ms;
     cursor: pointer;
     font-weight: 700;
