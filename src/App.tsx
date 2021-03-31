@@ -1,26 +1,18 @@
 import React, { useState } from 'react'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import './App.scss'
 
-import SideBar from './components/SideBar/SideBar'
-import Main from './components/Main/Main'
+// import SideBar from './components/SideBar/SideBar'
+// import Main from './components/Main/Main'
+import Admin from './Pages/Admin'
+import Home from './Pages/Home'
 
 function App() {
-  // this stores the state for the current selected tab. it defaults to the "home" tab.
-  const [selectedTab, setSelectedTab] = useState('Home')
-
-  // This sets the active tab based on the event.target.id of the clicked button.
-  const setActive = (e: any) => {
-    setSelectedTab(e.target.id)
-  }
-
-  // the selected tab state is passed to the main component for changing the view, the
-  // setActive function is passed to the sidebar so that it can control which tab is active.
-
   return (
-    <div className="App">
-      <Main selectedTab={selectedTab} />
-      <SideBar setActive={setActive} />
-    </div>
+    <Router>
+      <Route path="/" exact component={Home} />
+      <Route path="/admin" component={Admin} />
+    </Router>
   )
 }
 

@@ -58,7 +58,7 @@ export interface ContentImage {
 
 export interface ContentBox {
   key: number
-  cardStyle?: any
+  cardStyle?: CSSProperties
   btnStyling?: CSSProperties
   image?: ContentImage
   title?: string

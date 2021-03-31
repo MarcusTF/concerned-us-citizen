@@ -1,0 +1,19 @@
+@import '../../../variables';
+
+.preview {
+  display: grid;
+  align-items: center;
+  flex: auto;
+  background-color: $maincolor;
+}
+
+.card,
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p {
+  font-family: 'co-headline';
+}
